@@ -1,0 +1,80 @@
+#연결리스트 뒤집기
+
+'''
+1. 반복문으로 뒤집기
+- 이전, 현재, 다음을 유지 운영한다.
+- 현재 노드가 None이 아닐 때 까지,
+    1. 현재의 다음을 임시 저장한다.
+    2. 현재의 다음을 이전을 가리키도록 업데이트한다.
+    3. 이전 노드를 현재 노드로 이동한다.
+    4. 현재 노드를 임시 저장한 다음 노드로 이동한다.
+
+2. 스택으로 뒤집기
+- 노드를 저장할 스택 생성하기
+- 연결 리스트를 순회하기
+    1. 스택에 현재 노드를 추가하기
+    2. 마지막 노드는 넣지 않기
+- 스택의 모든 요소를 하나씩 꺼내기
+    1. 마지막 노드로부터 꺼내진 요소를 다음으로 연결하기
+
+3. 재귀로 뒤집기
+- 노드를 저장할 스택 생성하기
+- 연결리스트 순회하기
+    1. 스택에 현재 노드 추가하기
+    2. 마지막 노드는 넣지 않도록 하기
+- 스택의 모든 요소를 하나씩 꺼내기
+    1. 마지막 노드로부터 꺼내진 요소를 다음으로 연결하기
+'''
+
+
+class Node:
+    def __init__(self,val=0,next=None):
+        self.val=val
+        self.next=next
+
+    
+#반복문으로 뒤집기
+def reverseListByLoop(head:ListNode) -> ListNode :
+    prev=None
+    curr=head
+    
+    while(curr!=None):
+        next_temp=curr.next
+        curr.next = prev
+        prev=curr
+        curr=next_temp
+        
+    return prev
+
+#스택으로 뒤집기
+def reverseListByStack(head:ListNode) ->ListNode:
+    if head == None:
+        return head
+    
+    stack = []
+    
+    curr = head
+    
+    while curr.next != None:
+        stack.append(curr)
+        curr = curr.next
+    first = curr
+    
+    while stack:
+        curr.next=stack.pop()
+        curr= curr.next
+    curr.next = None
+    
+    return first
+
+#재귀로 뒤집기
+def reverseListByRecursiveFunction(head:Node)->Node:
+    if head == None or head.next==None:
+        return head
+    
+    reversed_list = reverseListByRecursiveFunction(head.next)
+    head.next.next = head
+    head.next = None
+    
+    return reversed_list
+    
