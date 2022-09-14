@@ -15,5 +15,15 @@ function myFunction(arr) {
   return result;
 }
 
+function sortByFirstChar(arr) {
+  return arr.reduce((acc, cur) => {
+    const firstLetter = cur.toLowerCase().charAt(0);
+    return { ...acc, [firstLetter]: [...(acc[firstLetter] || []), cur] };
+  }, {});
+}
+
 myFunction(["Alf", "Alice", "Ben"]);
 myFunction(["Berlin", "Paris", "Prague"]);
+
+sortByFirstChar(["Alf", "Alice", "Ben"]);
+sortByFirstChar(["Berlin", "Paris", "Prague"]);
