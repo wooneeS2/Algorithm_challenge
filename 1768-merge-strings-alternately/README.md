@@ -1,3 +1,20 @@
+### 🗓️ 2025-05-22
+
+Today, I decided to start studying algorithms again.  
+It’s been a while since I last practiced, and at first, I couldn’t remember any grammar or come up with a solution.
+
+I took some time to organize the problem’s conditions and looked up the grammar I forgot.  
+Eventually, I solved the problem and it passed the test cases — but I wasn’t happy with the code.
+
+So I asked ChatGPT for some **hints (without asking for the answer!)**.  
+Thanks to that, I was able to simplify the code, remove some unnecessary conditions,  
+and now the solution is not only **clearer** than before, but also **faster**.
+
+✔️ Small win today. One step at a time!
+
+
+
+
 <h2><a href="https://leetcode.com/problems/merge-strings-alternately">1768. Merge Strings Alternately</a></h2><h3>Easy</h3><hr><p>You are given two strings <code>word1</code> and <code>word2</code>. Merge the strings by adding letters in alternating order, starting with <code>word1</code>. If a string is longer than the other, append the additional letters onto the end of the merged string.</p>
 
 <p>Return <em>the merged string.</em></p>
