@@ -1,7 +1,13 @@
 ### 📘 2025-05-24 Daily Coding Log 
 Today, I solved this quiz.
+
+
 I was able to find all the conditions and the main logic right away.
+
+
 I came up with using a Math function with an array — it was nice!
+
+
 Actually, this problem was for Saturday, but I solved it on Friday during the day. lol
 
 
